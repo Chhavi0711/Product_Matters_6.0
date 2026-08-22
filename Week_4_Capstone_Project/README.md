@@ -1,11 +1,12 @@
-# IndusCare+ - Capstone Project
+# Capstone Project - IndusCare+
 
 **Product Matters 6.0 · E-Cell IIT Guwahati × IndusInd General Insurance** - [back to programme overview](../README.md)
 
-A mobile-first insurance protection platform for IndusInd Bank customers, built as the programme's final capstone against a brief set by IndusInd General Insurance: reimagine how customers discover, purchase, and manage general insurance across the full lifecycle - discovery, policy management, claims and renewals.
+A mobile-first insurance protection platform for IndusInd Bank customers, built against a real brief from IndusInd General Insurance: reimagine how customers discover, purchase, and manage general insurance across the full lifecycle - discovery, policy management, claims and renewals.
 
 🔗 **Live demo:** https://product-matters-induscare.onrender.com
-📄 **Deck:** [`induscare-capstone-deck.pdf`](./IndusCare_Capstone_Deck.pdf) (15 slides)
+📄 **Official brief:** [`Capstone_Project_PS.pdf`](./Capstone_Project_PS.pdf)
+📄 **Submitted deck:** [`IndusCare_Capstone_Deck.pdf`](./IndusCare_Capstone_Deck.pdf) (15 slides)
 
 ## The problem
 
@@ -21,7 +22,7 @@ The thesis: banks sit on income, spending, asset and life-stage data that insure
 
 ## Persona
 
-**Rhea Malhotra**, 29, product marketer in Bengaluru. IndusInd salary account holder, owns a two-wheeler and a health policy bought through an agent she's since lost touch with, pays premiums but has never filed a claim. She forgets renewal dates, can't compare her existing cover to alternatives, and dreads the idea of ever filing a claim — while already checking her IndusInd app weekly, making insurance an extension of an existing habit rather than a new one.
+**Rhea Malhotra**, 29, product marketer in Bengaluru. IndusInd salary account holder, owns a two-wheeler and a health policy bought through an agent she's since lost touch with, pays premiums but has never filed a claim. She forgets renewal dates, can't compare her existing cover to alternatives, and dreads the idea of ever filing a claim - while already checking her IndusInd app weekly, making insurance an extension of an existing habit rather than a new one.
 
 > *"I know I'm covered for something. I just don't know for what."*
 
@@ -56,7 +57,7 @@ Assumes insurer partners will expose APIs for real-time policy and claim data, t
 
 ## Tech
 
-- Plain HTML, CSS and JavaScript — no framework, no bundler, no backend
+- Plain HTML, CSS and JavaScript - no framework, no bundler, no backend
 - All state simulated in-browser; resets on refresh
 - Hosted on [Render](https://render.com) as a static site (no build command)
 
