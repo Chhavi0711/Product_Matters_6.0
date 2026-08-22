@@ -1,45 +1,48 @@
-# Product Matters 6.0 - E-Cell, IIT Guwahati
+# Product Matters 6.0 : E-Cell, IIT Guwahati
 
-A four-week product management programme run by E-Cell, IIT Guwahati, culminating in a capstone project set by **IndusInd General Insurance**. This repository collects the two build deliverables I produced during the programme, in the order they were made.
+A four-week product management programme run by E-Cell, IIT Guwahati, culminating in a capstone project set by **IndusInd General Insurance**. This repository collects every build/submission I produced during the programme, in the order they were made.
 
 **By:** Chhavi Tanwar · **Programme:** Product Matters 6.0 (individual participation) · **Jun - Jul 2026**
 
 ---
 
-## The two projects
+## The progression
 
-| | **TrustFix** (Week 3) | **IndusCare+** (Capstone) |
+| Week | Deliverable | What it demonstrates |
 |---|---|---|
-| **What** | Clickable prototype of a trust-first home-services marketplace | Product case + prototype for a bank-led insurance platform |
-| **Brief** | Turn Week 2's personas, MVP scope and wireframes into an interactive, annotated walkthrough | Reimagine how customers discover, buy, manage, claim and renew general insurance |
-| **Set by** | Programme curriculum | IndusInd General Insurance (real corporate brief) |
-| **Emphasis** | Interaction design, two-sided flows, trust mechanics | Market sizing, prioritisation, metrics, GTM, roadmap |
-| **Deliverables** | Clickable prototype + rationale annotations | 15-slide deck + clickable prototype |
-| **Folder** | [`trustfix-week3-prototype/`](./trustfix-week3-prototype) | [`induscare-capstone/`](./induscare-capstone) |
-| **Live demo** | https://product-matters-trustfix-prototype.onrender.com | https://product-matters-induscare.onrender.com |
+| **[Week 1](./Week_1)** | LinkedIn product teardown + "ACFS" feature proposal | Product critique, persona work, first-principles feature design - on an existing product |
+| **[Week 2](./Week_2)** | TrustFix: concept, personas, MVP, GTM | 0-to-1 product strategy for a marketplace built from scratch |
+| **[Week 3](./Week_3)** | TrustFix: clickable prototype | Turning that strategy into an interactive, annotated prototype |
+| **[Week 4 & Capstone](./Week_4_&_Capstone_Project)** | IndusCare+ - insurance platform for IndusInd General Insurance | Full end-to-end product case against a real corporate brief |
+
+🔗 TrustFix live demo: https://product-matters-trustfix-prototype.onrender.com
+🔗 IndusCare+ live demo: https://product-matters-induscare.onrender.com
 
 ---
 
-## How the two fit together
+## How the four fit together
 
-The programme ran weekly modules (product strategy, root-cause analysis, guesstimates, product design and improvement, behavioural interviewing, SQL), each assessed by a quiz and a submission-based assignment. Two of those submissions were builds rather than write-ups, and they sit at opposite ends of the product craft:
+**Week 1** starts on familiar ground - critique an existing product (LinkedIn) rather than invent one. The skill being tested is narrower and sharper: can you find the one pain point that actually matters (application ghosting) and propose a feature that's scoped, not sprawling (a 7-day SLA, not a redesign).
 
-**TrustFix (Week 3)** works bottom-up from an interface. The brief called for AI-assisted prototyping without engineering support, so the deliverable is a two-sided walkthrough - a customer app and a professional app - where every screen carries an annotation panel naming the Week 2 artefact it traces back to, and flagging the decisions the wireframes had left unresolved. Building it was the point: sequencing questions that a static wireframe can defer (who enters which OTP, when payment fires relative to completion, what happens on a mid-booking cancellation) have to be answered once the flow is clickable.
+**Week 2** removes the training wheels - no existing product to critique, a marketplace to invent from a one-paragraph prompt. This is where TrustFix's personas (Riya, the anxious customer; Rajesh, the stressed professional), its three pillars, MVP prioritization, and GTM strategy all originate.
 
-**IndusCare+ (Capstone)** works top-down from a market. It opens on penetration and addressable base, positions against aggregators, insurer apps and rival bancassurance, commits to a single persona, then narrows through scope justification and MoSCoW prioritisation to a North Star metric, a phased GTM and a four-quarter roadmap. The prototype here is supporting evidence for the strategy rather than the centre of it.
+**Week 3** stress-tests Week 2's decisions by making them clickable. A wireframe can defer questions a working prototype can't: what order do OTP and payment fire in, what happens on a mid-booking cancellation, does a low-literacy professional actually need a fifth screen. Every annotation in the prototype traces back to a specific Week 2 artefact or names the gap Week 2 left open.
 
-Read together: one project shows the ability to resolve a product down to the interaction, the other to reason up from a market to a roadmap.
+**The Capstone** is the highest-stakes version of the same muscle - a real brief from an external company (IndusInd General Insurance), fully worked from market sizing through a 15-slide deck to a four-screen clickable prototype.
+
+Read top to bottom: narrow critique → 0-to-1 strategy → interactive validation → enterprise-scale execution.
 
 ---
 
-## Skills demonstrated across both
+## Skills demonstrated across all four
 
-- **Discovery & framing** - persona definition, pain-point articulation, problem statements
-- **Prioritisation** - MoSCoW, explicit scope cuts, deliberate "won't have (v1)" calls
-- **Metrics** - North Star definition, adoption / engagement / retention metric trees
-- **Strategy** - market sizing, competitor positioning, whitespace identification, phased GTM, roadmapping
-- **Interaction design** - two-sided marketplace flows, trust and verification mechanics, edge-case handling, low-digital-literacy constraints
-- **Prototyping** - dependency-free HTML/CSS/JS prototypes, deployed as static sites
+- **Product critique** - identifying the highest-friction pain point in an existing product, not just listing observations
+- **Persona-driven design** - distinct personas per project, each with goals/frustrations/needs actually used to justify later decisions
+- **Prioritization** - MoSCoW and value-vs-complexity frameworks, with explicit "won't build" calls and reasoning
+- **Metrics** - North Star definition, supporting metric trees, PLC-stage analysis
+- **Strategy** - market sizing, competitor positioning, phased GTM, roadmapping
+- **Interaction design** - two-sided marketplace flows, trust/verification mechanics, edge-case identification
+- **Prototyping** - dependency-free HTML/CSS/JS prototypes, AI-assisted ("vibe-coded") build process, deployed as static sites
 
 ---
 
@@ -48,13 +51,22 @@ Read together: one project shows the ability to resolve a product down to the in
 ```
 .
 ├── README.md
-├── trustfix-week3-prototype/
+├── Week_1/
 │   ├── README.md
-│   └── index.html                      # the entire prototype, single file
-└── induscare-capstone/
+│   ├── Week_1_assignment.pdf                    # brief
+│   └── ProductMatters6.0_Assignment1_Final.pdf  # submission
+├── Week_2/
+│   ├── README.md
+│   ├── Week_2_assignment.pdf
+│   └── ProductMatters6.0_Assignment2_Final.pdf
+├── Week_3/
+│   ├── README.md
+│   ├── Week_3_assignment.pdf
+│   ├── ProductMatters6.0_Assignment3_Final.pdf
+│   └── index.html                               # the clickable prototype
+└── Week_4_&_Capstone_Project/
     ├── README.md
-    ├── index.html                      # clickable prototype
-    └── induscare-capstone-deck.pdf     # 15-slide submitted deck
+    ├── Capstone_Project_PS.pdf                  # official problem statement
+    ├── IndusCare_Capstone_Deck.pdf              # 15-slide submitted deck
+    └── index.html                               # the clickable prototype
 ```
-
-Each project folder has its own README with full detail. Both prototypes are dependency-free single files - no build step, no backend.
