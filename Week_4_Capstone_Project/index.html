@@ -1,0 +1,196 @@
+<style>
+  :root{--maroon:#8B1E2E;--maroon-d:#6E1622;--dark:#1A1A1A;--gray:#6B6B6B;--light:#F5F2F0;--gold:#B8894A;--green:#2E7D46;}
+  *{box-sizing:border-box;font-family:'Segoe UI',system-ui,sans-serif;}
+  .app-wrap{display:flex;justify-content:center;padding:24px;background:#EDE8E4;}
+  .phone{width:360px;height:720px;background:#fff;border-radius:32px;box-shadow:0 20px 50px rgba(0,0,0,.25);overflow:hidden;position:relative;border:8px solid var(--dark);}
+  .screen{position:absolute;inset:0;overflow-y:auto;background:#fff;display:none;padding-bottom:70px;}
+  .screen.active{display:block;}
+  .topbar{background:var(--maroon);color:#fff;padding:16px 18px;font-weight:600;font-size:16px;position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;}
+  .topbar .back{cursor:pointer;font-size:18px;}
+  .content{padding:16px;}
+  .card{background:var(--light);border-radius:14px;padding:14px;margin-bottom:12px;cursor:pointer;transition:transform .15s;}
+  .card:active{transform:scale(.98);}
+  .nudge{background:linear-gradient(135deg,var(--maroon),var(--maroon-d));color:#fff;border-radius:14px;padding:16px;margin-bottom:16px;}
+  .nudge .cta{display:inline-block;margin-top:10px;background:var(--gold);color:#fff;padding:6px 14px;border-radius:20px;font-size:12px;font-weight:600;cursor:pointer;}
+  .pill{display:inline-block;padding:3px 10px;border-radius:12px;font-size:11px;font-weight:600;}
+  .pill.active{background:#E4F2E7;color:var(--green);}
+  .pill.due{background:#FCEBD5;color:var(--gold);}
+  h3{margin:0 0 4px;font-size:15px;color:var(--dark);}
+  .sub{color:var(--gray);font-size:12px;margin:0;}
+  .navbar{position:absolute;bottom:0;left:0;right:0;height:60px;background:#fff;border-top:1px solid #eee;display:flex;}
+  .navitem{flex:1;text-align:center;padding-top:9px;font-size:11px;color:var(--gray);cursor:pointer;}
+  .navitem.on{color:var(--maroon);font-weight:700;}
+  .navitem .ico{font-size:18px;display:block;}
+  .plan-card{border:2px solid var(--light);border-radius:14px;padding:14px;margin-bottom:12px;cursor:pointer;}
+  .plan-card.reco{border-color:var(--gold);background:#FFF9F0;}
+  .badge{background:var(--gold);color:#fff;font-size:10px;padding:2px 8px;border-radius:10px;font-weight:700;}
+  .btn-primary{background:var(--maroon);color:#fff;border:none;border-radius:10px;padding:13px;width:100%;font-weight:600;font-size:14px;cursor:pointer;margin-top:8px;}
+  .step{display:flex;align-items:center;gap:8px;margin-bottom:14px;}
+  .step .dot{width:24px;height:24px;border-radius:50%;background:var(--light);color:var(--gray);font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700;}
+  .step.done .dot{background:var(--green);color:#fff;}
+  .step.now .dot{background:var(--maroon);color:#fff;}
+  .step p{margin:0;font-size:13px;font-weight:600;color:var(--dark);}
+  .step small{color:var(--gray);font-size:11px;}
+  .upload{border:2px dashed #ccc;border-radius:12px;padding:20px;text-align:center;color:var(--gray);font-size:12px;margin:12px 0;}
+  .timeline{border-left:2px solid var(--light);padding-left:14px;margin-left:6px;}
+  .tl-item{margin-bottom:16px;position:relative;}
+  .tl-item::before{content:'';position:absolute;left:-19px;top:2px;width:10px;height:10px;border-radius:50%;background:var(--green);}
+  .tl-item.pending::before{background:#ddd;}
+  .hint{text-align:center;color:#8a8a8a;font-size:11px;margin-top:8px;}
+</style>
+
+<div class="app-wrap">
+<div class="phone">
+
+  <!-- HOME -->
+  <div class="screen active" id="home">
+    <div class="topbar">IndusCare+</div>
+    <div class="content">
+      <div class="nudge">
+        <strong>You're not covered for your new bike loan.</strong>
+        <p style="font-size:12px;margin:6px 0 0;opacity:.9">Add motor insurance in under 5 taps.</p>
+        <span class="cta" onclick="go('compare')">Get covered →</span>
+      </div>
+      <h3>Your protection snapshot</h3>
+      <div class="card" onclick="go('policies')">
+        <span class="pill active">Active</span>
+        <h3 style="margin-top:8px">Health Insurance - Star Health</h3>
+        <p class="sub">₹5L cover · Renews 14 Mar 2027</p>
+      </div>
+      <div class="card" onclick="go('policies')">
+        <span class="pill due">Renews in 12 days</span>
+        <h3 style="margin-top:8px">Motor Insurance - Bajaj Allianz</h3>
+        <p class="sub">Comprehensive · Scooter KA-05</p>
+      </div>
+      <div class="card" onclick="go('compare')">
+        <h3>+ Add Home Insurance</h3>
+        <p class="sub">Recommended since your home loan disbursal</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- MY POLICIES -->
+  <div class="screen" id="policies">
+    <div class="topbar"><span class="back" onclick="go('home')">←</span>My Policies</div>
+    <div class="content">
+      <div class="card">
+        <span class="pill active">Active</span>
+        <h3 style="margin-top:8px">Health - Star Health</h3>
+        <p class="sub">₹5L cover · Premium ₹14,200/yr · Renews 14 Mar 2027</p>
+      </div>
+      <div class="card">
+        <span class="pill due">Renews in 12 days</span>
+        <h3 style="margin-top:8px">Motor - Bajaj Allianz</h3>
+        <p class="sub">Comprehensive · ₹3,800/yr</p>
+        <button class="btn-primary" onclick="event.stopPropagation();go('claim1')">File a Claim</button>
+      </div>
+      <div class="card">
+        <span class="pill active">Active</span>
+        <h3 style="margin-top:8px">Term Life - IndusInd Suraksha</h3>
+        <p class="sub">₹50L cover · Renews 02 Nov 2026</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- COMPARE & BUY -->
+  <div class="screen" id="compare">
+    <div class="topbar"><span class="back" onclick="go('home')">←</span>Home Insurance Plans</div>
+    <div class="content">
+      <p class="sub" style="margin-bottom:12px">Based on your home loan of ₹45L</p>
+      <div class="plan-card reco" onclick="go('buy')">
+        <span class="badge">RECOMMENDED</span>
+        <h3 style="margin-top:8px">HDFC Ergo Home Shield</h3>
+        <p class="sub">Structure + contents · ₹50L cover · ₹2,100/yr</p>
+      </div>
+      <div class="plan-card" onclick="go('buy')">
+        <h3>ICICI Lombard Griha Suraksha</h3>
+        <p class="sub">Structure only · ₹40L cover · ₹1,650/yr</p>
+      </div>
+      <div class="plan-card" onclick="go('buy')">
+        <h3>Bajaj Allianz Home Secure</h3>
+        <p class="sub">Structure + contents + valuables · ₹55L cover · ₹2,450/yr</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BUY CONFIRM -->
+  <div class="screen" id="buy">
+    <div class="topbar"><span class="back" onclick="go('compare')">←</span>Confirm & Pay</div>
+    <div class="content">
+      <div class="card">
+        <h3>HDFC Ergo Home Shield</h3>
+        <p class="sub">₹50L cover · Structure + contents</p>
+        <p class="sub">Premium: <strong style="color:var(--dark)">₹2,100/year</strong></p>
+      </div>
+      <p class="sub">KYC auto-filled from your IndusInd profile. No documents needed.</p>
+      <button class="btn-primary" onclick="go('success')">Pay ₹2,100 & Activate</button>
+    </div>
+  </div>
+
+  <div class="screen" id="success">
+    <div class="topbar">Suraksha One</div>
+    <div class="content" style="text-align:center;padding-top:60px">
+      <div style="font-size:48px">✅</div>
+      <h3 style="margin-top:16px">Policy Activated</h3>
+      <p class="sub">Your e-policy is now in My Policies.</p>
+      <button class="btn-primary" onclick="go('policies')">View Policy</button>
+    </div>
+  </div>
+
+  <!-- CLAIM FLOW -->
+  <div class="screen" id="claim1">
+    <div class="topbar"><span class="back" onclick="go('policies')">←</span>File a Claim</div>
+    <div class="content">
+      <div class="step done"><div class="dot">✓</div><div><p>Policy selected</p><small>Motor - Bajaj Allianz</small></div></div>
+      <div class="step now"><div class="dot">2</div><div><p>What happened?</p><small>Choose incident type</small></div></div>
+      <div class="card" onclick="go('claim2')"><h3>🚗 Accident damage</h3></div>
+      <div class="card" onclick="go('claim2')"><h3>🌧️ Natural calamity</h3></div>
+      <div class="card" onclick="go('claim2')"><h3>🔧 Theft / part loss</h3></div>
+    </div>
+  </div>
+
+  <div class="screen" id="claim2">
+    <div class="topbar"><span class="back" onclick="go('claim1')">←</span>Upload Details</div>
+    <div class="content">
+      <p class="sub">Add photos of the damage - our assistant checks these instantly.</p>
+      <div class="upload">📷 Tap to upload photos</div>
+      <div class="card" style="background:#EAF5EC;">
+        <p class="sub" style="color:var(--green);font-weight:600">✓ AI check: All required documents detected</p>
+      </div>
+      <button class="btn-primary" onclick="go('claim3')">Submit Claim</button>
+    </div>
+  </div>
+
+  <div class="screen" id="claim3">
+    <div class="topbar"><span class="back" onclick="go('policies')">←</span>Claim CLM-88231</div>
+    <div class="content">
+      <div class="timeline">
+        <div class="tl-item"><p style="margin:0;font-size:13px;font-weight:600">Claim submitted</p><small class="sub">Today, 10:42 AM</small></div>
+        <div class="tl-item"><p style="margin:0;font-size:13px;font-weight:600">Documents verified</p><small class="sub">Today, 10:45 AM</small></div>
+        <div class="tl-item pending"><p style="margin:0;font-size:13px;font-weight:600;color:var(--gray)">Surveyor assigned</p><small class="sub">Expected within 24 hrs</small></div>
+        <div class="tl-item pending"><p style="margin:0;font-size:13px;font-weight:600;color:var(--gray)">Settlement</p><small class="sub">Pending</small></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="navbar">
+    <div class="navitem" id="nav-home" onclick="go('home')"><span class="ico">🏠</span>Home</div>
+    <div class="navitem" id="nav-policies" onclick="go('policies')"><span class="ico">📄</span>Policies</div>
+    <div class="navitem" id="nav-compare" onclick="go('compare')"><span class="ico">🔍</span>Explore</div>
+    <div class="navitem" id="nav-claim1" onclick="go('claim1')"><span class="ico">🛟</span>Claims</div>
+  </div>
+</div>
+</div>
+<p class="hint">Clickable prototype - tap cards, nudges and buttons to move through the flow.</p>
+
+<script>
+function go(id){
+  document.querySelectorAll('.screen').forEach(s=>s.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  document.querySelectorAll('.navitem').forEach(n=>n.classList.remove('on'));
+  const navMap={home:'nav-home',policies:'nav-policies',compare:'nav-compare',buy:'nav-compare',success:'nav-policies',claim1:'nav-claim1',claim2:'nav-claim1',claim3:'nav-claim1'};
+  const nav=document.getElementById(navMap[id]); if(nav) nav.classList.add('on');
+  document.getElementById(id).scrollTop=0;
+}
+go('home');
+</script>
