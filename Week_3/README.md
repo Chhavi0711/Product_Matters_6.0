@@ -52,4 +52,4 @@ Hosted on [Render](https://render.com) as a static site:
 ## Related deliverables
 
 - **Week 2:** problem definition, personas, MVP scope, GTM strategy, wireframes (the upstream artefacts the annotations trace back to)
-- **Week 3 deck:** "Prototyping TrustFix — From Wireframes to a Working Model"
+- **Week 3 deck:** "Prototyping TrustFix - From Wireframes to a Working Model"
